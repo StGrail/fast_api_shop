@@ -1,0 +1,24 @@
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.2.0
+    default_stages: [commit, push]
+    hooks:
+    -   id: trailing-whitespace
+    -   id: end-of-file-fixer
+    -   id: check-yaml
+    -   id: check-added-large-files
+    -   id: autopep8
+    -   id: python-use-type-annotations
+    -   id: add-trailing-comma
+    -   id: dockerfilelint
+    -   id: check-docstring-first
+    -   id: isort
+    -   id: mypy
+      name: mypy
+      entry: "./run-mypy"
+      language: python
+      language_version: python3.10.1
+      additional_dependencies: [ "mypy==0.790" ]
+      types: [ python ]
+      require_serial: true
+      verbose: true
